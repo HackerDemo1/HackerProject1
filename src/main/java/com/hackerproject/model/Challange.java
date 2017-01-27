@@ -17,6 +17,15 @@ public class Challange {
 	@Column(name="challange_desc")
 	private String Challange_desc;
 	
+	public Challange(int challange_id, String challange_company , String  challange_desc, int challange_ctc,
+			Date challange_date) {
+		super();
+		Challange_id = challange_id;
+		Challange_desc = challange_desc;
+		Challange_company = challange_company;
+		Challange_ctc = challange_ctc;
+		this.challange_date = challange_date;
+	}
 	@Column(name="challange_company")
 	private String Challange_company;
 	
@@ -54,6 +63,10 @@ public class Challange {
 	}
 	public void setChallange_date(Date challange_date) {
 		this.challange_date = challange_date;
+	}
+	public Challange()
+	{
+		
 	}
 
 }
