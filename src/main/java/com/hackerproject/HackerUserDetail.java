@@ -24,7 +24,7 @@ public class HackerUserDetail implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		Users user = repo.findOneByusername(username);
-		System.out.println("INVOKED -->"+ user.getusername());
+		System.out.println("INVOKED -->"+ user.getusername()+"   "+ user.getRole());
 		List<GrantedAuthority> grantedauthorities = new ArrayList<>();
 		grantedauthorities.add(new SimpleGrantedAuthority(user.getRole()));
 		UserDetails userdetails = new org.springframework.security.core.userdetails.User(user.getusername(),user.getPassword(),grantedauthorities);
